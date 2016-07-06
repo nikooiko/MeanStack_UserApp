@@ -1,0 +1,14 @@
+{
+  "name": "client",
+  "homepage": "https://github.com/nikooiko/MeanStack_UserApp",
+  "authors": [
+    "Nick Oikonomou <nikooiko@inf.uth.gr>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "dependencies": {
+    "angular-resource": "^1.5.7",
+    "angular": "^1.5.7"
+  }
+}
