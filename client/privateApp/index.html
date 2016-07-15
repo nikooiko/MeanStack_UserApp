@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Angular</title>
+
+   <!--<link rel="icon" type="image/png" href="http://example.com/myicon.png">-->
+
+   <base href="/">
+
+   <script src="../content/bower_components/angular/angular.min.js"></script>
+   <script src="../content/bower_components/angular-resource/angular-resource.min.js"></script>
+   <script src="../content/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+</head>
+<body ng-app="privateApp">
+
+Private:
+<div ui-view="header"></div>
+<div ui-view="body"></div>
+
+<script src="../privateApp/app/app.module.js"></script>
+<script src="../privateApp/app/app.config.js"></script>
+<script src="../privateApp/app/shared/interceptors/auth.interceptor.js"></script>
+
+<script src="../privateApp/app/components/logout/logout.module.js"></script>
+<script src="../privateApp/app/components/logout/logout.component.js"></script>
+
+<script src="../privateApp/app/components/profile/profile.module.js"></script>
+   <script src="../privateApp/app/components/profile/show/show.module.js"></script>
+   <script src="../privateApp/app/components/profile/show/show.component.js"></script>
+
+   <script src="../privateApp/app/components/profile/edit/edit.module.js"></script>
+   <script src="../privateApp/app/components/profile/edit/edit.component.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Angular</title>
+
+   <!--<link rel="icon" type="image/png" href="http://example.com/myicon.png">-->
+
+   <base href="/">
+
+   <script src="../content/bower_components/angular/angular.min.js"></script>
+   <script src="../content/bower_components/angular-resource/angular-resource.min.js"></script>
+   <script src="../content/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+</head>
+<body ng-app="publicApp">
+
+<div ui-view="">
+
+</div>
+
+<script src="../publicApp/app/app.module.js"></script>
+<script src="../publicApp/app/app.config.js"></script>
+
+<script src="../publicApp/app/components/auth/auth.module.js"></script>
+   <script src="../publicApp/app/components/auth/login/login.module.js"></script>
+   <script src="../publicApp/app/components/auth/login/login.component.js"></script>
+
+   <script src="../publicApp/app/components/auth/register/register.module.js"></script>
+   <script src="../publicApp/app/components/auth/register/register.component.js"></script>
+</body>
+</html>

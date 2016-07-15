@@ -6,20 +6,23 @@
 const express = require('express');
 const router = express.Router();
 
-const auth = require('./authRouter');
-const api = require('./api/index');
+const _public = require('./public/index');
+const _private = require('./private/index');
 
 const middlewares = require('../middlewares/index');
 
 // Routes
-router.use(auth.baseUrl, auth.router);
-router.use(api.baseUrl, api.router);//TODO add auth middleware
+   //public
+router.use(_public.baseUrl, _public.router);
 
-const controllers = require('../controllers/index');
-router.get('/tmp', controllers.Cntrl);//TODO delete
+   //private
+router.use(_private.baseUrl, middlewares.auth, _private.router);
+
+// Error handlers
+router.use(middlewares.errorHandlers.auth);
 
 // Export router
 module.exports = {
-   baseUrl : '/',
+   baseUrl : '/api',
    router : router
 };
