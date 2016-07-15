@@ -21,7 +21,11 @@ class EditController{
       console.log('Password:' + credentials.password);
       console.log('Email:' + credentials.email);
 
-      return this.$http.put('/api/private/users/' + this.user.id, credentials);
+      return this.$http
+         .put('/api/private/users/' + this.user.id, credentials)
+         .then(() => {
+            alert('Updated');
+         });
    }
 
    getUserProfile(){

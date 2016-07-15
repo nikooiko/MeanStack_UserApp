@@ -93,6 +93,7 @@ app.get('/dummyError', (req, res) => {
 app.use(routes.baseUrl, routes.router);
 
 // Serve Client
+app.use('/node_modules/', express.static('../node_modules/'));
 app.use(express.static('../client/'));
 
 // app.all("/auth/*", (req, res) => {
