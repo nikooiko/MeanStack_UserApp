@@ -9,6 +9,7 @@ class ShowController{
       this.$http = $http;
       this.id = 'empty';
       this.getUserProfile();
+      this.getUserArticles();
    }
    
    getUserProfile(){
@@ -17,6 +18,14 @@ class ShowController{
          .then( (res) => {
             this.user = res.data.user;
          });
+   }
+
+   getUserArticles(){
+      return this.$http
+         .get('/api/private/users/getLoggedInUserArticles')
+         .then( (res) => {
+            this.articles = res.data;
+         })
    }
 }
 

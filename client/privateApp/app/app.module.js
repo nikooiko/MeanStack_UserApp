@@ -5,6 +5,8 @@
 
 angular.module('privateApp', [
    'ui.router',
+   'ngMaterial',
    'profile',
-   'logout'
+   'logout',
+   'articles',
 ]);

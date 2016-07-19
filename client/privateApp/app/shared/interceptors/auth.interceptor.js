@@ -6,12 +6,12 @@
 
 class AuthInterceptor{
    constructor($window){
-      this.$window = $window
+      this.$window = $window;
    }
 
    responseError(res){
       console.log('Interceptor - Error');
-      $window.location.href = '/auth/login';
+      this.$window.location.href = '/auth/login';
       return res;
    }
 }

@@ -3,4 +3,13 @@ Username: {{ $ctrl.user.username }}<br>
 Password: {{ $ctrl.user.password }}<br>
 Email:  {{ $ctrl.user.email }}<br>
 
-<button ui-sref="profile.edit">edit</button>
+<button ui-sref="app.profile.edit">edit</button>
+
+<br>
+<hr>
+User Articles:
+<ul>
+   <li ng-repeat="article in $ctrl.articles">
+      {{ article.title }}
+   </li>
+</ul>

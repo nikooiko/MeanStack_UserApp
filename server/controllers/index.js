@@ -3,5 +3,7 @@
  */
 
 module.exports = {
-   auth : require('./auth')
+   auth : require('./auth'),
+   users : require('./users'),
+   articles : require('./articles')
 };

@@ -1,0 +1,8 @@
+ShowAll: <button ui-sref="app.articles.create">Create</button>
+<ul>
+   <li ng-repeat="article in $ctrl.articles">
+      <a ui-sref="app.articles.show({id: article._id})">{{ article.title }}</a>
+      <button ui-sref="app.articles.edit({id: article._id})">Edit</button>
+      <button ng-click="$ctrl.deleteArticle(article._id, $index)">Delete</button>
+   </li>
+</ul>

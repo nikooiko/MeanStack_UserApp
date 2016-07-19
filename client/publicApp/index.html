@@ -2,20 +2,26 @@
 <html lang="en">
 <head>
    <meta charset="UTF-8">
+   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
    <title>Angular</title>
 
    <!--<link rel="icon" type="image/png" href="http://example.com/myicon.png">-->
-
    <base href="/">
 
-   <script src="../../node_modules/angular/angular.min.js"></script>
-   <script src="../../node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+   <link rel="stylesheet" href="../../node_modules/angular-material/angular-material.css">
 </head>
-<body ng-app="publicApp">
+<body ng-app="publicApp" layout="column">
 
-<div ui-view="">
+<md-content flex="100" md-scroll-y>
+   <div ui-view="" layout="column" layout-fill layout-padding></div>
+</md-content>
 
-</div>
+<script src="../../node_modules/angular/angular.min.js"></script>
+<script src="../../node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="../../node_modules/angular-aria/angular-aria.js"></script>
+<script src="../../node_modules/angular-animate/angular-animate.js"></script>
+<script src="../../node_modules/angular-material/angular-material.js"></script>
 
 <script src="../publicApp/app/app.module.js"></script>
 <script src="../publicApp/app/app.config.js"></script>

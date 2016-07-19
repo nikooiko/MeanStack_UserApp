@@ -5,8 +5,8 @@
 'use strict';
 
 class RegisterController{
-   constructor($window, $http){
-      this.$window = $window;
+   constructor($state, $http){
+      this.$state = $state;
       this.$http = $http;
       this.credentials = {
          username: '',
@@ -20,11 +20,12 @@ class RegisterController{
          .post('/api/public/auth/register', credentials)
          .then( (res) => {
             //Success
-            this.$window.location.href = '/profile';
-            console.log('User logged in');
+            this.$state.go('auth.login');
+            console.log('User Registration was Successful');
          }, (res) => {
             //Fail
-            console.log('User Login failed');
+            alert('registration failed');
+            console.log('User Registration failed');
          });
    }
 }
@@ -33,6 +34,6 @@ angular.module('register')
    .component('auth.register', {
       templateUrl: root + 'app/components/auth/register/register.template.html',
       controller: [
-         '$window', '$http',
-         ($window, $http) => new RegisterController($window, $http)]
+         '$state', '$http',
+         ($state, $http) => new RegisterController($state, $http)]
    });

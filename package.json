@@ -9,6 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "angular": "^1.5.7",
+    "angular-animate": "^1.5.7",
+    "angular-aria": "^1.5.7",
+    "angular-material": "^1.1.0-rc.5",
+    "angular-ui-router": "1.0.0-alpha.3",
     "body-parser": "^1.15.2",
     "connect-flash": "^0.1.1",
     "cors": "^2.7.1",
@@ -18,8 +23,6 @@
     "mongoose": "^4.5.3",
     "node-restful": "^0.2.5",
     "passport": "^0.3.2",
-    "passport-local": "^1.0.0",
-    "angular": "^1.5.7",
-    "angular-ui-router": "1.0.0-alpha.3"
+    "passport-local": "^1.0.0"
   }
 }

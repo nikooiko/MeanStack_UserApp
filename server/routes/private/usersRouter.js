@@ -7,21 +7,22 @@ const router = express.Router();
 // Models
 const models = require('../../models/index');
 
+// Controllers
+const controllers = require('../../controllers/index');
+
 // Routes
-models.User.methods(['get', 'put', 'delete']);
+models.User.methods([
+   'get',
+   'put',
+   'delete'
+]);
+
 models.User.register(router, '');
 
-router.get('/showLoggedInUser', (req, res) => {
-   const data = {
-      user: {
-         username : req.user.username,
-         password :req.user.password,
-         email : req.user.email,
-         id : req.user.id
-      }
-   };
-   res.json(data);
-});
+router.get('/showLoggedInUser', controllers.users.showLoggedInUser);
+router.get('/getLoggedInUserArticles', controllers.users.getLoggedInUserArticles);
+router.get('/:id/articles', controllers.users.getUserArticles);
+
 
 module.exports = {
    baseUrl : '/users',

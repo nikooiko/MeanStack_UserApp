@@ -2,6 +2,9 @@
  * Created by nick on 7/6/16.
  */
 
-module.exports = {
-   User: require('./User.js')
-};
+const modelsStorage = {};
+
+require('./User.js')(modelsStorage);
+require('./Article.js')(modelsStorage);
+
+module.exports = modelsStorage;

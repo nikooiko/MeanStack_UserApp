@@ -5,5 +5,6 @@
 
 angular.module('publicApp', [
    'ui.router',
+   'ngMaterial',
    'auth'
 ]);
