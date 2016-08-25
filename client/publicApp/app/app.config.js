@@ -7,27 +7,30 @@
 const root = 'publicApp/';
 
 angular.module('publicApp')
-   .config([
-      '$stateProvider', '$urlRouterProvider', '$locationProvider',
-      ($stateProvider, $urlRouterProvider, $locationProvider) => {
+  .config([
+    '$stateProvider', '$urlRouterProvider', '$locationProvider',
+    ($stateProvider, $urlRouterProvider, $locationProvider) => {
 
-         $urlRouterProvider.otherwise('/auth/login');
+      $urlRouterProvider.otherwise('/auth/login');
 
-         $locationProvider.html5Mode(true);  //Remove the # from the URL's
+      $locationProvider.html5Mode(true);  //Remove the # from the URL's
 
-         $stateProvider
-            .state('auth', {
-               abstract : true,
-               url : '/auth',
-               templateUrl : root + 'app/components/auth/auth.template.html'
-            })
-            .state('auth.login', {
-               url : '/login',
-               component : 'auth.login'
-            })
-            .state('auth.register', {
-               url : '/register',
-               component : 'auth.register'
-            })
-      }
-   ]);
+      $stateProvider
+        .state('auth', {
+          abstract: true,
+          url: '/auth',
+          templateUrl: root + 'app/components/auth/auth.template.html'
+        })
+        .state('auth.login', {
+          url: '/login',
+          component: 'auth.login',
+          resolve: {
+            demoVar: () => 'demo'
+          }
+        })
+        .state('auth.register', {
+          url: '/register',
+          component: 'auth.register'
+        })
+    }
+  ]);
