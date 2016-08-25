@@ -16,7 +16,7 @@ const middlewares = require('../middlewares/index');
 router.use(_public.baseUrl, _public.router);
 
    //private
-router.use(_private.baseUrl, _private.router);
+router.use(_private.baseUrl, middlewares.auth, _private.router);
 
 // Error handlers
 router.use(middlewares.errorHandlers.auth);
